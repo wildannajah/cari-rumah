@@ -25,8 +25,8 @@ const typography = {
   },
   h3: {
     fontWeight: 700,
-    lineHeight: 1.5,
-    fontSize: pxToRem(24),
+    lineHeight: 1,
+    fontSize: pxToRem(26),
     ...responsiveFontSizes({ sm: 26, md: 30, lg: 32 }),
   },
   h4: {

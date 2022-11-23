@@ -21,7 +21,15 @@ export default function ControlLabel(theme: Theme) {
     MuiFormLabel: {
       styleOverrides: {
         root: {
+          paddingLeft: '20px',
           color: theme.palette.text.disabled,
+        },
+      },
+    },
+    MuiInputLabel: {
+      styleOverrides: {
+        shrink: {
+          paddingLeft: '0',
         },
       },
     },
