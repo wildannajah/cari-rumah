@@ -37,12 +37,38 @@ export default function Router() {
       ],
     },
     {
+      path: '*',
+      // element: <LogoOnlyLayout />,
+      children: [
+        { path: 'landing', element: <Landing /> },
+        // { path: 'coming-soon', element: <ComingSoon /> },
+        // { path: 'maintenance', element: <Maintenance /> },
+        // { path: 'pricing', element: <Pricing /> },
+        // { path: 'payment', element: <Payment /> },
+        // { path: '500', element: <Page500 /> },
+        // { path: '404', element: <NotFound /> },
+        // { path: '*', element: <Navigate to="/404" replace /> },
+      ],
+    },
+    {
       path: '/',
       element: <MainLayout />,
       children: [
         {
-          element: <HomePage />,
+          element: <Home />,
           index: true,
+        },
+        {
+          path: 'search',
+          element: <Search />,
+        },
+        {
+          path: 'liked',
+          element: <Liked />,
+        },
+        {
+          path: 'profile',
+          element: <Profile />,
         },
       ],
     },
@@ -59,7 +85,11 @@ export default function Router() {
 }
 
 // MAIN
-const HomePage = Loadable(lazy(() => import('../pages/Home')));
+const Home = Loadable(lazy(() => import('../pages/Home')));
+const Search = Loadable(lazy(() => import('../pages/Search')));
+const Liked = Loadable(lazy(() => import('../pages/Liked')));
+const Profile = Loadable(lazy(() => import('../pages/Profile')));
 // AUTH
 const Login = Loadable(lazy(() => import('../pages/Login')));
+const Landing = Loadable(lazy(() => import('../pages/Landing')));
 const Register = Loadable(lazy(() => import('../pages/Register')));
